@@ -17,6 +17,8 @@ and creates no UI or map markers. Its prices and records are snapshots from the 
 Updates arrive with a new core data build. Source attribution and data licensing are in
 [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt).
 
+**mod.io plugin ID: `6471519`**
+
 ## Getting started
 
 ### 1. Declare the dependency
@@ -39,10 +41,19 @@ Merge this dependency entry into your plugin's `plugin.json`:
 }
 ```
 
-`MonsterDataCore` is the alias your Lua code receives. The value is the local dependency's
-folder name. When preparing a published plugin, replace that value with the core's published
-plugin id; the local folder name is for development. Keep your plugin's other manifest fields
-and dependencies.
+`MonsterDataCore` is the alias your Lua code receives. The folder-name value above is for
+local development. For a plugin using the mod.io dependency, use Monster Data Core's listing
+ID, **6471519**:
+
+```json
+{
+  "requiredDependencies": {
+    "MonsterDataCore": 6471519
+  }
+}
+```
+
+Keep your plugin's other manifest fields and dependencies.
 
 Refresh the client's plugin list with `prf`, then enable `monster-data-core` before your plugin.
 The client provides the dependency export through the `MonsterDataCore` global. Use that
